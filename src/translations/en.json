@@ -1,4 +1,26 @@
 {
+    "homeheader": {
+        "speciality": "speciality",
+        "searcdoctor": "Find a doctor by specialty",
+        "health-facility": "Medical facility",
+        "select-room": "Select hospital clinic",
+        "doctor": "Doctor ",
+        "select-doctor": "Choose a good doctor",
+        "fee": "Check package",
+        "check-health": "General health check",
+        "appointment": "Appointment"
+    },
+    "banner": {
+        "title1": "MEDICAL PLATFORM",
+        "title2": "COMPREHENSIVE HEALTH CARE",
+        "search": "Search",
+        "chidl1": "Specialist examination",
+        "chidl2": "Remote examination",
+        "chidl3": "General examination",
+        "chidl4": " Medical Test",
+        "chidl5": " Mental health",
+        "chidl6": "Dental checkup"
+    },
     "common": {
         "add": "Add",
         "edit": "Edit",
@@ -31,7 +53,7 @@
             "system-administrator": {
                 "header": "System Administrator",
                 "user-manage": "User manage",
-                "product-manage": "Package manage",
+                "user-redux": "Manage user-redux",
                 "register-package-group-or-account": "Register service package for group/account"
             },
             "system-parameter": {
