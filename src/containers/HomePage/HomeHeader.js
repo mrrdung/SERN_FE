@@ -14,6 +14,7 @@ class HomeHeader extends Component {
     render() {
         let language = this.props.language;
 
+
         return (
             <React.Fragment>
                 <div className='home-header-container'>
@@ -60,7 +61,7 @@ class HomeHeader extends Component {
                         </div>
                         <div className='right-content'>
                             <div className='child-content-appointment'>
-                                <i class="fas fa-history"></i>
+                                <i className="fas fa-history"></i>
                                 <span><FormattedMessage id="homeheader.appointment" /></span>
                             </div>
                             <div className={language === LANGUAGES.VI ? "language-vi active" : "language-vi"} ><span onClick={() => this.handleChangeLanguage(LANGUAGES.VI)}>VN</span></div>
@@ -83,7 +84,7 @@ class HomeHeader extends Component {
                         <div className='option'>
                             <div className='option-child'>
                                 <div className='icon-child'>
-                                    <i class="fas fa-hospital"></i>
+                                    <i className="fas fa-hospital"></i>
                                 </div>
                                 <div className='text-child'>
                                     <FormattedMessage id="banner.chidl1" />
@@ -91,7 +92,7 @@ class HomeHeader extends Component {
                             </div>
                             <div className='option-child'>
                                 <div className='icon-child'>
-                                    <i class="fas fa-mobile-alt"></i>
+                                    <i className="fas fa-mobile-alt"></i>
                                 </div>
                                 <div className='text-child'>
                                     <FormattedMessage id="banner.chidl2" />
@@ -99,7 +100,7 @@ class HomeHeader extends Component {
                             </div>
                             <div className='option-child'>
                                 <div className='icon-child'>
-                                    <i class="fas fa-user-md"></i>
+                                    <i className="fas fa-user-md"></i>
                                 </div>
                                 <div className='text-child'>
                                     <FormattedMessage id="banner.chidl3" />
@@ -107,7 +108,7 @@ class HomeHeader extends Component {
                             </div>
                             <div className='option-child'>
                                 <div className='icon-child'>
-                                    <i class="fas fa-stethoscope"></i>
+                                    <i className="fas fa-stethoscope"></i>
                                 </div>
                                 <div className='text-child'>
                                     <FormattedMessage id="banner.chidl4" />
@@ -115,7 +116,7 @@ class HomeHeader extends Component {
                             </div>
                             <div className='option-child'>
                                 <div className='icon-child'>
-                                    <i class="far fa-circle"></i>
+                                    <i className="far fa-circle"></i>
                                 </div>
                                 <div className='text-child'>
                                     <FormattedMessage id="banner.chidl5" />
@@ -123,7 +124,7 @@ class HomeHeader extends Component {
                             </div>
                             <div className='option-child'>
                                 <div className='icon-child'>
-                                    <i class="fas fa-venus-double"></i>
+                                    <i className="fas fa-venus-double"></i>
                                 </div>
                                 <div className='text-child'>
                                     <FormattedMessage id="banner.chidl6" />
@@ -147,6 +148,7 @@ const mapStateToProps = state => {
     return {
         isLoggedIn: state.user.isLoggedIn,
         language: state.app.language,
+        userInfo: state.user.userInfo
     };
 };
 

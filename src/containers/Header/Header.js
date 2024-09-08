@@ -6,15 +6,17 @@ import Navigator from '../../components/Navigator';
 import { adminMenu } from './menuApp';
 import './Header.scss';
 import { LANGUAGES } from '../../utils'
+import { FormattedMessage } from 'react-intl';
+
 class Header extends Component {
     handleChanLanguage = (language) => {
         this.props.changeLanguageAppRedux(language)
     }
     render() {
         let language = this.props.language;
-        console.log('check language', language);
+        const { processLogout, userInfo } = this.props;
+        // console.log('check user userInfo', userInfo);
 
-        const { processLogout } = this.props;
 
         return (
             <div className="header-container">
@@ -23,6 +25,7 @@ class Header extends Component {
                     <Navigator menus={adminMenu} />
                 </div>
                 <div className='language'>
+                    <span className='welcome'><FormattedMessage id="homeheader.welcome" />{userInfo && userInfo.firstName && userInfo.lastName ? userInfo.firstName + userInfo.lastName : ''}!</span>
                     <span className={language === LANGUAGES.VI ? 'language-vi active' : 'language-vi'} onClick={() => this.handleChanLanguage(LANGUAGES.VI)}>VN</span>
                     <span className={language === LANGUAGES.EN ? 'language-en active' : 'language-en'} onClick={() => this.handleChanLanguage(LANGUAGES.EN)}>EN</span>
                     {/* nút logout */}
@@ -41,6 +44,7 @@ const mapStateToProps = state => {
     return {
         isLoggedIn: state.user.isLoggedIn,
         language: state.app.language,
+        userInfo: state.user.userInfo
     };
 };
 

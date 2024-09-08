@@ -29,6 +29,9 @@ app.get('*', (req, res) => {
     res.sendFile(path.join(buildDir, 'index.html'));
 });
 
+app.useEffect(() => {
+    initLightboxJS("Insert your License Key here", "Insert plan type here");
+}, []);
 const port = process.env.PORT || 3000;
 app.listen(port);
 

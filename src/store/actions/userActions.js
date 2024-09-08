@@ -9,7 +9,7 @@ export const userLoginSuccess = (userInfo) => ({
 })
 
 export const userLoginFail = () => ({
-    type: actionTypes.USER_LOGIN_FAIL
+    type: actionTypes.USER_LOGIN_FAILDED
 })
 
 export const processLogout = () => ({
