@@ -1,5 +1,5 @@
 import actionTypes from './actionTypes';
-import { getAllcodesService, addNewUserService, getAllUsers, deleteUserService } from '../../services/userService';
+import { getAllcodesService, addNewUserService, getAllUsers, deleteUserService, editUserService, getTopDoctorHomeService } from '../../services/userService';
 import { toast } from "react-toastify";
 
 
@@ -130,9 +130,7 @@ export const fetchAllUserStart = () => {
             } else {
                 dispatch(fetchAllUserFail());
             }
-
         } catch (e) {
-
             dispatch(fetchAllUserFail());
             console.log(e);
         }
@@ -170,4 +168,58 @@ export const deleteUserSuccess = (data) => ({
 })
 export const deleteUserFail = () => ({
     type: actionTypes.DELETE_USER_FAILDED
+})
+
+//update
+export const updateUserStart = (data) => {
+    return async (dispatch, getState) => {
+        try {
+            let res = await editUserService(data);
+            console.log('check res', res);
+
+            if (res && res.errCode === 0) {
+                toast.success("update user ok");
+                dispatch(updateUserSuccess());
+                dispatch(fetchAllUserStart())
+            } else {
+                toast.error('up date user error k ok')
+                dispatch(updateUserFail());
+            }
+
+        } catch (e) {
+            toast.error('up date user error')
+            dispatch(updateUserFail());
+            console.log(e);
+        }
+    }
+}
+export const updateUserSuccess = () => ({
+    type: actionTypes.UPDATE_USER_SUCCESS,
+})
+export const updateUserFail = () => ({
+    type: actionTypes.UPDATE_USER_FAILDED
+})
+
+export const fetchTopDoctorStart = () => {
+    return async (dispatch, getState) => {
+        try {
+            let res = await getTopDoctorHomeService('4');
+            console.log('check responsse', res);
+            if (res && res.errCode === 0) {
+                dispatch(fetchTopDoctorSuccess(res.data))
+            } else {
+                dispatch(fetchTopDoctorFail())
+            }
+        } catch (e) {
+            console.log(e);
+            dispatch(fetchTopDoctorFail())
+        }
+    }
+}
+export const fetchTopDoctorSuccess = (data) => ({
+    type: actionTypes.FETCH_TOP_DOCTOR_SUCCESS,
+    dataDoctors: data
+})
+export const fetchTopDoctorFail = () => ({
+    type: actionTypes.FETCH_TOP_DOCTOR_FAILDED
 })

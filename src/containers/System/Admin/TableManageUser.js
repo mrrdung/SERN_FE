@@ -3,6 +3,7 @@ import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
 import "./TableManageUser.scss";
 import * as action from '../../../store/actions';
+import thunk from 'redux-thunk';
 
 
 class TableManageUser extends Component {
@@ -27,7 +28,10 @@ class TableManageUser extends Component {
             })
         }
     }
+    handleEditUser = (user) => {
+        this.props.handleEditInputFromParentkey(user);
 
+    }
     handleDeleteUser = (user) => {
 
         this.props.deleteUserStart(user.id);
@@ -58,7 +62,7 @@ class TableManageUser extends Component {
                                         <td>{item.phonenumber}</td>
                                         <td>
                                             <button className='edit-btn'
-                                            // onClick={() => this.handleEditUser(item)}
+                                                onClick={() => this.handleEditUser(item)}
                                             ><i className="fas fa-pencil-alt"></i></button>
                                             <button className='delete-btn'
                                                 onClick={() => this.handleDeleteUser(item)}

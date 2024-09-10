@@ -49,6 +49,7 @@
         "gender": "Giới tính",
         "position": "Chức danh",
         "role": "Vai trò",
-        "save": "Lưu"
+        "save": "Lưu",
+        "edit": "Sửa"
     }
 }

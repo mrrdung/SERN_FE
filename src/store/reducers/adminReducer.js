@@ -5,7 +5,8 @@ const initialState = {
     roles: [],
     position: [],
     isLoadingGender: false,
-    users: []
+    users: [],
+    topDoctors: [],
 }
 
 const adminReducer = (state = initialState, action) => {
@@ -59,7 +60,6 @@ const adminReducer = (state = initialState, action) => {
             }
         //Fetch all user
         case actionTypes.FETCH_ALL_USER_SUCCESS:
-            console.log('dung fire fetch all user sUCCESS', action);
             state.users = action.user;
 
             return {
@@ -67,6 +67,17 @@ const adminReducer = (state = initialState, action) => {
             }
         case actionTypes.FETCH_ALL_USER_FAILDED:
             state.users = [];
+            return {
+                ...state,
+            }
+        case actionTypes.FETCH_TOP_DOCTOR_SUCCESS:
+            console.log('dung fire FETCH_TOP_DOCTOR_SUCCESS', action);
+            state.topDoctors = action.dataDoctors;
+            return {
+                ...state,
+            }
+        case actionTypes.FETCH_TOP_DOCTOR_FAILDED:
+            state.topDoctors = [];
             return {
                 ...state,
             }
