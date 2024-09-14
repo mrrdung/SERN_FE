@@ -25,12 +25,12 @@
 
             .bg-image {
 
-                background-size: cover;
+                background-size    : cover;
                 background-position: center;
-                background-repeat: no-repeat;
-                background-color: #eee;
-                height: 150px;
-                width: 278px;
+                background-repeat  : no-repeat;
+                background-color   : #eee;
+                height             : 150px;
+                width              : 278px;
 
                 &.section-specialty {
                     background-image: url("../../assets//images/specialty/a.jpg");
@@ -38,15 +38,15 @@
 
                 &.section-medical {
                     background-image: url("../../assets//images/factory/152704logo-bvcr-moi.jpg");
-                    width: 130px;
-                    height: 130px;
-                    margin: auto;
+                    width           : 130px;
+                    height          : 130px;
+                    margin          : auto;
                 }
 
                 &.section-outstanding-doctor {
                     // background-image: url("../../assets//images/outstanding/135013-bs-nguyen-hoang-son.jpg");
-                    width: 120px;
-                    height: 120px;
+                    width        : 120px;
+                    height       : 120px;
                     border-radius: 50%;
 
                 }
@@ -71,41 +71,41 @@
         margin: 0 160px;
 
         .section-header {
-            height: 24%;
-            padding: 15px 0;
+            height  : 24%;
+            padding : 15px 0;
             position: relative;
 
             span {
-                font-size: 20px;
+                font-size  : 20px;
                 font-weight: 600;
             }
 
             .btn-header-spe {
-                border: none;
-                text-transform: uppercase;
-                right: 25px;
-                position: absolute;
+                border          : none;
+                text-transform  : uppercase;
+                right           : 25px;
+                position        : absolute;
                 background-color: #e8e3e3;
-                font-size: 16px;
-                padding: 5px;
+                font-size       : 16px;
+                padding         : 5px;
 
                 &:hover {
                     background-color: orange;
-                    color: white;
-                    outline: none;
+                    color           : white;
+                    outline         : none;
                 }
             }
         }
 
         .slick-next {
-            right: -5px;
-            width: 44px;
-            height: 48px;
+            right           : -5px;
+            width           : 44px;
+            height          : 48px;
             background-color: white;
-            border-radius: 15%;
-            border: 1px solid #49bce2;
-            z-index: 1;
-            opacity: 0.9;
+            border-radius   : 15%;
+            border          : 1px solid #49bce2;
+            z-index         : 1;
+            opacity         : 0.9;
 
             &:hover {
                 opacity: 1;
@@ -113,15 +113,15 @@
         }
 
         .slick-prev {
-            left: -20px;
-            width: 44px;
-            height: 48px;
+            left            : -20px;
+            width           : 44px;
+            height          : 48px;
             background-color: white;
-            border-radius: 15%;
-            border: 1px solid #49bce2;
-            color: red !important;
-            z-index: 1;
-            opacity: 0.9;
+            border-radius   : 15%;
+            border          : 1px solid #49bce2;
+            color           : red !important;
+            z-index         : 1;
+            opacity         : 0.9;
 
             &:hover {
                 opacity: 1;
@@ -130,13 +130,13 @@
 
         .slick-prev:before {
             font-family: FontAwesome !important;
-            color: black !important;
+            color      : black !important;
 
         }
 
         .slick-next:before {
             font-family: FontAwesome !important;
-            color: black !important;
+            color      : black !important;
 
         }
 
@@ -145,21 +145,27 @@
 
 }
 
+.slick-disabled {
+    display: none !important;
+}
+
 .section-outstanding-doctor {
     .outer-bg {
-        display: flex;
+        display        : flex;
         justify-content: center;
-        margin-bottom: 10px;
+        margin-bottom  : 10px;
 
     }
 
     .section-customize {
-        padding: 5px 0;
-        padding-left: 6px;
-        padding-right: 20px;
+        padding      : 5px 0;
+        padding-left : 6px;
+        padding-right: 0px;
+        width        : 85% !important;
+        cursor       : pointer;
 
         .customize-border {
-            border: 1px solid orange;
+            border       : 1px solid orange;
             border-radius: 10px;
         }
 
@@ -170,19 +176,19 @@
 .section-footer {
     height: 40px;
 
-    padding: 6px;
-    text-align: center;
+    padding         : 6px;
+    text-align      : center;
     background-color: #64b9e5;
 
 }
 
 .section-about {
     .section-about-header {
-        padding-top: 15px;
+        padding-top   : 15px;
         padding-bottom: 20px;
-        text-align: center;
-        font-weight: 600;
-        font-size: 22px;
+        text-align    : center;
+        font-weight   : 600;
+        font-size     : 22px;
 
     }
 

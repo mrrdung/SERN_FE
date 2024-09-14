@@ -7,6 +7,7 @@ const initialState = {
     isLoadingGender: false,
     users: [],
     topDoctors: [],
+    allDoctors: []
 }
 
 const adminReducer = (state = initialState, action) => {
@@ -71,7 +72,6 @@ const adminReducer = (state = initialState, action) => {
                 ...state,
             }
         case actionTypes.FETCH_TOP_DOCTOR_SUCCESS:
-            console.log('dung fire FETCH_TOP_DOCTOR_SUCCESS', action);
             state.topDoctors = action.dataDoctors;
             return {
                 ...state,
@@ -81,6 +81,19 @@ const adminReducer = (state = initialState, action) => {
             return {
                 ...state,
             }
+        case actionTypes.FETCH_ALL_DOCTOR_SUCCESS:
+            console.log('dung fire FETCH_all_DOCTOR_SUCCESS', action);
+            state.allDoctors = action.dataDR;
+            return {
+                ...state,
+            }
+        case actionTypes.FETCH_ALL_DOCTOR_FAILDED:
+            state.allDoctors = [];
+            return {
+                ...state,
+            }
+
+
         default:
             return state;
     }

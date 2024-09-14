@@ -5,6 +5,7 @@ import { FormattedMessage } from 'react-intl';
 import Slider from "react-slick";
 import * as actions from '../../../store/actions'
 import { LANGUAGES } from '../../../utils';
+import { withRouter } from 'react-router-dom'
 
 class OutStandingdoctor extends Component {
     constructor(props) {
@@ -24,6 +25,11 @@ class OutStandingdoctor extends Component {
             })
         }
     }
+    handleViewDetailDoctor = (doctor) => {
+        console.log('doctor', doctor);
+        this.props.history.push(`/detail-doctor/${doctor.id}`);
+
+    }
 
     render() {
 
@@ -34,7 +40,9 @@ class OutStandingdoctor extends Component {
             <div className='section-share  section-outstanding-doctor'>
                 <div className='section-container'>
                     <div className='section-header'>
-                        <span className='tex-section-header'>Bác sĩ nổi bật</span>
+                        <span className='tex-section-header'>
+                            <FormattedMessage id="home-page.outstanding-doctor" />
+                        </span>
                         <button className='btn-header-spe'>Xem thêm</button>
                     </div>
                     <div className='section-body'>
@@ -48,7 +56,8 @@ class OutStandingdoctor extends Component {
                                     let nameVi = `${item.positionData.valueVi}, ${item.firstName}, ${item.lastName}`
                                     let nameEn = `${item.positionData.valueEn}, ${item.firstName}, ${item.lastName}`
                                     return (
-                                        <div className='section-customize' key={index}>
+                                        <div className='section-customize' key={index}
+                                            onClick={() => this.handleViewDetailDoctor(item)}>
                                             <div className='customize-border'>
                                                 <div className='outer-bg ' >
                                                     <div className="bg-image section-outstanding-doctor"
@@ -89,4 +98,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(OutStandingdoctor);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(OutStandingdoctor));

@@ -1,5 +1,8 @@
 import actionTypes from './actionTypes';
-import { getAllcodesService, addNewUserService, getAllUsers, deleteUserService, editUserService, getTopDoctorHomeService } from '../../services/userService';
+import {
+    getAllcodesService, addNewUserService, getAllUsers, deleteUserService,
+    editUserService, getTopDoctorHomeService, getAllDoctors, saveInfoDoctor
+} from '../../services/userService';
 import { toast } from "react-toastify";
 
 
@@ -223,3 +226,48 @@ export const fetchTopDoctorSuccess = (data) => ({
 export const fetchTopDoctorFail = () => ({
     type: actionTypes.FETCH_TOP_DOCTOR_FAILDED
 })
+
+export const fetchAllDoctorStart = () => {
+    return async (dispatch, getState) => {
+        try {
+            let res = await getAllDoctors();
+            console.log('check responsse-doc', res);
+            if (res && res.errCode === 0) {
+                dispatch({
+                    type: actionTypes.FETCH_ALL_DOCTOR_SUCCESS,
+                    dataDR: res.data
+                })
+            } else {
+                dispatch({
+                    type: actionTypes.FETCH_ALL_DOCTOR_FAILDED,
+                })
+            }
+        } catch (e) {
+            console.log('FETCH_ALL_DOCTOR_FAILDED', e);
+            dispatch({ type: actionTypes.FETCH_ALL_DOCTOR_FAILDED })
+        }
+    }
+}
+
+export const saveInfoDoctorStart = (data) => {
+    return async (dispatch, getState) => {
+        try {
+            let res = await saveInfoDoctor(data);
+            if (res && res.errCode === 0) {
+                toast.success('Save Info Doctor ok')
+                dispatch({
+                    type: actionTypes.SAVE_INFO_DOCTOR_SUCCESS,
+                })
+            } else {
+                toast.error('Save Info Doctor Error')
+                dispatch({
+                    type: actionTypes.SAVE_INFO_DOCTOR_FAILDED,
+                })
+            }
+        } catch (e) {
+            console.log('SAVE_INFO_DOCTOR_FAILDED', e);
+            toast.error('Save Info Doctor Error')
+            dispatch({ type: actionTypes.SAVE_INFO_DOCTOR_FAILDED })
+        }
+    }
+}

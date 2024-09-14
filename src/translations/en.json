@@ -35,7 +35,11 @@
             "manage-specialty": "Manage specialtys",
             "handbook": "Handbook",
             "manage-handbook": "Manage handbooks"
+        },
+        "doctor":{
+            "manage-schedule":"Manage Doctor's schedule"
         }
+        
     },
     "manage-user": {
         "add": "Add new user",
@@ -50,5 +54,8 @@
         "position": "Position",
         "role": "Role",
         "save": "Save"
+    },
+    "home-page": {
+        "outstanding-doctor": "Outstanding doctor"
     }
 }

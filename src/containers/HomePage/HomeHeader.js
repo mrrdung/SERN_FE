@@ -7,9 +7,15 @@ import { FormattedMessage } from 'react-intl';
 import { LANGUAGES } from '../../utils/constant'
 import { changeLanguageApp } from '../../store/actions'
 import './HomePage.scss'
+import { withRouter } from 'react-router';
 class HomeHeader extends Component {
     handleChangeLanguage = (language) => {
         this.props.changeLanguageAppRedux(language)
+    }
+    returnHomepage=()=>{
+        if(this.props.history){
+            this.props.history.push(`/home`)
+        }
     }
     render() {
         let language = this.props.language;
@@ -22,7 +28,7 @@ class HomeHeader extends Component {
                         <div className='left-content'>
                             <i className="fas fa-bars"></i>
                             <div className='headerlogo'>
-                                <img src={logo}></img>
+                                <img src={logo} onClick={()=>this.returnHomepage()}></img>
                             </div>
                         </div>
                         <div className='center-content'>
@@ -70,74 +76,77 @@ class HomeHeader extends Component {
                         </div>
                     </div>
                 </div>
-                <div className='home-header-banner'>
-                    <div className='upbanner'>
-                        <div className='title1'> <FormattedMessage id="banner.title1" /></div>
-                        <div className='title2'> <FormattedMessage id="banner.title2" /></div>
-                        <div className='search'>
-                            <i className="fas fa-search"></i>
-                            <input type='text' className='search-input' placeholder="OK" />
+                {this.props.isShowBanner === true &&
+                    <div className='home-header-banner'>
+                        <div className='upbanner'>
+                            <div className='title1'> <FormattedMessage id="banner.title1" /></div>
+                            <div className='title2'> <FormattedMessage id="banner.title2" /></div>
+                            <div className='search'>
+                                <i className="fas fa-search"></i>
+                                <input type='text' className='search-input' placeholder="OK" />
 
+                            </div>
                         </div>
-                    </div>
-                    <div className='downbanner'>
-                        <div className='option'>
-                            <div className='option-child'>
-                                <div className='icon-child'>
-                                    <i className="fas fa-hospital"></i>
+                        <div className='downbanner'>
+                            <div className='option'>
+                                <div className='option-child'>
+                                    <div className='icon-child'>
+                                        <i className="fas fa-hospital"></i>
+                                    </div>
+                                    <div className='text-child'>
+                                        <FormattedMessage id="banner.chidl1" />
+                                    </div>
                                 </div>
-                                <div className='text-child'>
-                                    <FormattedMessage id="banner.chidl1" />
+                                <div className='option-child'>
+                                    <div className='icon-child'>
+                                        <i className="fas fa-mobile-alt"></i>
+                                    </div>
+                                    <div className='text-child'>
+                                        <FormattedMessage id="banner.chidl2" />
+                                    </div>
                                 </div>
-                            </div>
-                            <div className='option-child'>
-                                <div className='icon-child'>
-                                    <i className="fas fa-mobile-alt"></i>
+                                <div className='option-child'>
+                                    <div className='icon-child'>
+                                        <i className="fas fa-user-md"></i>
+                                    </div>
+                                    <div className='text-child'>
+                                        <FormattedMessage id="banner.chidl3" />
+                                    </div>
                                 </div>
-                                <div className='text-child'>
-                                    <FormattedMessage id="banner.chidl2" />
+                                <div className='option-child'>
+                                    <div className='icon-child'>
+                                        <i className="fas fa-stethoscope"></i>
+                                    </div>
+                                    <div className='text-child'>
+                                        <FormattedMessage id="banner.chidl4" />
+                                    </div>
                                 </div>
-                            </div>
-                            <div className='option-child'>
-                                <div className='icon-child'>
-                                    <i className="fas fa-user-md"></i>
+                                <div className='option-child'>
+                                    <div className='icon-child'>
+                                        <i className="far fa-circle"></i>
+                                    </div>
+                                    <div className='text-child'>
+                                        <FormattedMessage id="banner.chidl5" />
+                                    </div>
                                 </div>
-                                <div className='text-child'>
-                                    <FormattedMessage id="banner.chidl3" />
+                                <div className='option-child'>
+                                    <div className='icon-child'>
+                                        <i className="fas fa-venus-double"></i>
+                                    </div>
+                                    <div className='text-child'>
+                                        <FormattedMessage id="banner.chidl6" />
+                                    </div>
                                 </div>
-                            </div>
-                            <div className='option-child'>
-                                <div className='icon-child'>
-                                    <i className="fas fa-stethoscope"></i>
-                                </div>
-                                <div className='text-child'>
-                                    <FormattedMessage id="banner.chidl4" />
-                                </div>
-                            </div>
-                            <div className='option-child'>
-                                <div className='icon-child'>
-                                    <i className="far fa-circle"></i>
-                                </div>
-                                <div className='text-child'>
-                                    <FormattedMessage id="banner.chidl5" />
-                                </div>
-                            </div>
-                            <div className='option-child'>
-                                <div className='icon-child'>
-                                    <i className="fas fa-venus-double"></i>
-                                </div>
-                                <div className='text-child'>
-                                    <FormattedMessage id="banner.chidl6" />
-                                </div>
-                            </div>
 
 
 
+                            </div>
                         </div>
+
+
                     </div>
+                }
 
-
-                </div>
             </React.Fragment >
         );
     }
@@ -158,4 +167,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(HomeHeader);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(HomeHeader));
