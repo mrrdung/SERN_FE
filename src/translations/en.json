@@ -36,10 +36,9 @@
             "handbook": "Handbook",
             "manage-handbook": "Manage handbooks"
         },
-        "doctor":{
-            "manage-schedule":"Manage Doctor's schedule"
+        "doctor": {
+            "manage-schedule": "Manage Doctor's schedule"
         }
-        
     },
     "manage-user": {
         "add": "Add new user",
@@ -57,5 +56,11 @@
     },
     "home-page": {
         "outstanding-doctor": "Outstanding doctor"
+    },
+    "manage-schedule": {
+        "title": "Manage your doctor appointment schedule",
+        "Choose-doctor": "Choose doctor",
+        "Choose-date": "Choose date",
+        "save": "Save Info"
     }
 }

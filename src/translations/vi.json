@@ -36,8 +36,8 @@
             "handbook": "Cẩm nang",
             "manage-handbook": "Quản lý cẩm nang"
         },
-        "doctor":{
-            "manage-schedule":"Quản lý kế hoạch khám bệnh của bác sỹ"
+        "doctor": {
+            "manage-schedule": "Quản lý kế hoạch khám bệnh bác sỹ"
         }
     },
     "manage-user": {
@@ -57,5 +57,11 @@
     },
     "home-page": {
         "outstanding-doctor": "Bác sĩ nổi bật"
+    },
+    "manage-schedule": {
+        "title": "Quản lý lịch hẹn khám bệnh của bác sĩ",
+        "Choose-doctor": "Chọn bác sĩ ",
+        "Choose-date": "Chọn thời gian",
+        "save": "Lưu Thông Tin"
     }
 }

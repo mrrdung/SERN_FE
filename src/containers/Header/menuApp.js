@@ -4,7 +4,7 @@ export const adminMenu = [
         name: 'menu.admin.manage-user',
         menus: [
             {
-                name: 'menu.admin.manage-doctor', link: '/system/manage-doctor'
+                name: 'menu.doctor.nanage-schedule', link: '/doctor/manage-schedule'
             },
             // {
             //     name: 'menu.admin.manage-admin', link: '/system/user-manage'
@@ -51,7 +51,8 @@ export const doctorMenu = [
         name: 'menu.admin.manage-user',
         menus: [
             {
-                name: 'menu.doctor.manage-schedule', link: '/system/manage-doctor'
+                name: 'menu.doctor.manage-schedule',link: '/doctor/manage-schedule',
+                
             },
           
         ]

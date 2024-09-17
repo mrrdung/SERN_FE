@@ -1,0 +1,38 @@
+.manage-schedule-container {
+    .m-s-title {
+        text-transform: uppercase;
+        font-size: 22px;
+        font-weight: 600;
+        margin: 26px 0;
+        padding: 0 auto;
+        text-align: center;
+    }
+    .container {
+        .chose-time-container {
+            padding: 30px 10px;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            .btn-schedule-time {
+                background-color: aliceblue;
+                border-radius: 20px;
+
+                box-shadow: 0px 2px #888888;
+                border: none;
+                padding: 5px;
+                &:hover {
+                    background-color: #04aa6d;
+                }
+                &.active {
+                    background-color: #04aa6d;
+                }
+            }
+        }
+        .btn-save-schedule {
+            width: 10%;
+            margin-top: 30px;
+            border-radius: 20px;
+            box-shadow: 0px 2px #888888;
+        }
+    }
+}
