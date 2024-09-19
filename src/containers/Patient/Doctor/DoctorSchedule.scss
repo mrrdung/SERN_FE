@@ -1,0 +1,60 @@
+.doctor-shedule-container {
+    .all-schedule {
+        select {
+            padding: 5px;
+            border: none;
+            outline: none;
+            border-bottom: 1px solid #333;
+            cursor: pointer;
+            color: #337ab7;
+            font-weight: 600;
+            option {
+                cursor: pointer;
+            }
+        }
+    }
+
+    .all-available-time {
+        .text-calendar {
+            margin: 10px 0;
+            color: #333;
+            font-size: 16x;
+            span {
+                text-transform: uppercase;
+                margin-left: 5px;
+            }
+        }
+        .time-content {
+            .time-content-btns {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+                button {
+                    padding: 8px 10px;
+                    border: none;
+                    outline: none;
+                    background-color: #f9f9f9;
+                    min-width: 120px;
+                    border-radius: 3px;
+
+                    &:hover {
+                        box-shadow: 0px 0px 2px 1.5px #49bce2;
+                    }
+                }
+            }
+            .booking-free {
+                padding-top: 11px;
+                span {
+                    font-size: 12px;
+                }
+            }
+
+            .empty-calendar {
+                background-color: #f9f9f9;
+                width: 90%;
+                text-align: center;
+                padding: 10px;
+            }
+        }
+    }
+}

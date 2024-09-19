@@ -62,5 +62,28 @@
         "Choose-doctor": "Choose doctor",
         "Choose-date": "Choose date",
         "save": "Save Info"
+    },
+    "patient": {
+        "detail-doctor": {
+            "schedule": "Schedule",
+            "no-shedule": "No schedules available, please choose another time !",
+            "choose": "Choose ",
+            "book-free": " and book (Booking fee 0 VND)"
+        }
+    },
+    "admin": {
+        "manage-doctor": {
+            "title": "Add doctor information",
+            "seclect-doctor": "Seclect doctor",
+            "intro": "Enter information",
+            "save": "Save Info",
+            "add": "Create information",
+            "seclect-price": "Select price",
+            "seclect-pay": "Seclect payment",
+            "seclect-province": "Seclect province",
+            "clinic-name": "Clinic name",
+            "clinic-address": "Clinic address",
+            "note": "Note"
+        }
     }
 }

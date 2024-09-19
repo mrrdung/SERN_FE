@@ -282,3 +282,42 @@ export const fetchAllCodeTimeStart = () => {
         }
     };
 };
+export const getRequireDoctorInfo = () => {
+    return async (dispatch, getState) => {
+        try {
+            dispatch({ type: actionTypes.FETCH_REQUIRE_DOCTOR_INFO_START });
+
+            let resPrice = await getAllcodesService("PRICE");
+            let resPayment = await getAllcodesService("PAYMENT");
+            let resPovince = await getAllcodesService("PROVINCE");
+            if (
+                resPrice &&
+                resPrice.errCode === 0 &&
+                resPovince &&
+                resPovince.errCode === 0 &&
+                resPayment &&
+                resPayment.errCode === 0
+            ) {
+                let data = {
+                    resPrice: resPrice.data,
+                    resPayment: resPayment.data,
+                    resPovince: resPovince.data,
+                };
+                dispatch(getRequireDoctorInfoSuccess(data));
+            } else {
+                dispatch(getRequireDoctorInfoFail());
+            }
+        } catch (e) {
+            dispatch(getRequireDoctorInfoFail());
+            console.log(e);
+        }
+    };
+};
+export const getRequireDoctorInfoFail = () => ({
+    type: actionTypes.FETCH_REQUIRE_DOCTOR_INFO_FAILDED,
+});
+
+export const getRequireDoctorInfoSuccess = requireData => ({
+    type: actionTypes.FETCH_REQUIRE_DOCTOR_INFO_SUCCESS,
+    data: requireData,
+});

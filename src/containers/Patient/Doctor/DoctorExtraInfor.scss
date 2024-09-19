@@ -1,0 +1,62 @@
+.doctor-extar-container {
+    padding-left: 16px;
+    padding-top: 10px;
+    .content-up {
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 10px;
+        .text-address {
+            text-transform: uppercase;
+            font-weight: 600;
+            color: #666666;
+            font-size: 15px;
+        }
+        .name-clinic {
+            font-size: 13px;
+            color: #000000;
+            font-weight: 550;
+        }
+        .detail-address {
+            font-size: 13px;
+            color: #000000;
+            font-weight: 550;
+        }
+    }
+    .content-down {
+        padding-top: 10px;
+        .text-price {
+            text-transform: uppercase;
+            font-weight: 600;
+            color: #666666;
+            font-size: 15px;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 5px;
+            span {
+                color: #4dc6d4;
+                cursor: pointer;
+                text-transform: none;
+                font-weight: 400;
+            }
+        }
+
+        .price {
+            background-color: #f8f8f8;
+            padding: 5px;
+            border: 1px solid #ddd;
+            font-size: 13px;
+        }
+        .payment {
+            background-color: rgba(238, 238, 238, 1);
+            padding: 5px;
+            border: 1px solid #ddd;
+            margin-bottom: 15px;
+            font-size: 13px;
+        }
+        span {
+            color: #4dc6d4;
+
+            font-weight: 400;
+            cursor: pointer;
+        }
+    }
+}

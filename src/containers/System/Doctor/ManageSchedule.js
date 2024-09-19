@@ -16,7 +16,6 @@ class ManageSchedule extends Component {
         this.state = {
             listDoctors: [],
             selectedDoctor: {},
-            // currentDate: new Date(),
             currentDate: "",
             rangeTime: [],
         };
@@ -124,14 +123,17 @@ class ManageSchedule extends Component {
             doctorId: selectedDoctor.value,
             formatDate: formatDate,
         });
-
-        console.log("check result", result);
-        console.log("check res", res);
+        if (res && res.errCode === 0) {
+            toast.success("Thêm lịch hẹn thành công");
+        } else {
+            toast.error("Thêm lịch hẹn thât bại");
+        }
     };
     render() {
-        // console.log("checks allScheduleTime", this.state);
+        // console.log("currentDate", this.state.currentDate);
         let { rangeTime } = this.state;
         let { language } = this.props;
+        let yesterday = new Date(new Date().setDate(new Date().getDate() - 1));
         return (
             <React.Fragment>
                 <div className="manage-schedule-container">
@@ -161,7 +163,7 @@ class ManageSchedule extends Component {
                                     className="form-control"
                                     onChange={this.handleOnchangeDate}
                                     value={this.state.currentDate}
-                                    minDate={new Date()}
+                                    minDate={yesterday}
                                 />
                             </div>
                             <div className="col-12 chose-time-container">
