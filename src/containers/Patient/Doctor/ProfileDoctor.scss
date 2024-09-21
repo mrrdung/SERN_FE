@@ -1,0 +1,48 @@
+.profile-doctor-container {
+    .intro-doctor {
+        display: flex;
+        .left-Content {
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            border: none;
+            margin: 0px 20px;
+        }
+        .right-Content {
+            width: calc(100% - 100px);
+            // .up {
+            //     font-weight: 600;
+            //     font-size: 20px;
+            // }
+            .text-booking {
+                font-size: 14px;
+                font-weight: 500;
+                color: #666565;
+                text-transform: uppercase;
+            }
+            .text-name {
+                color: #337ab7;
+
+                font-size: 15px;
+                font-weight: 550;
+            }
+            .text-time {
+                font-size: 15px;
+                font-weight: 550;
+                color: #fdc72d;
+            }
+            .text-address {
+                font-size: 13px;
+            }
+        }
+    }
+    .price {
+        .price-option {
+            padding: 20px;
+            border: 1px solid gold;
+        }
+    }
+}

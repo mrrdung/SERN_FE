@@ -69,6 +69,28 @@
             "no-shedule": "No schedules available, please choose another time !",
             "choose": "Choose ",
             "book-free": " and book (Booking fee 0 VND)"
+        },
+        "extral-infor-doctor": {
+            "text-price": " Price ",
+            "text-show": "See details ",
+            "text-hidden": "Hide price list ",
+            "payment": "The clinic accepts payment in form "
+        },
+        "profile-schedule": {
+            "make-schedule": "Make schedule",
+            "price": "Price: "
+        },
+        "booKing-modal": {
+            "title": "Appointment information",
+            "fullName": "Full Name",
+            "phoneNumber": "PhoneNumber",
+            "email": "Email",
+            "address": "Address",
+            "reason": "Reason",
+            "birthday": "Birthday",
+            "gender": "Gender",
+            "save": "Confirm",
+            "cancel": "Cancel"
         }
     },
     "admin": {

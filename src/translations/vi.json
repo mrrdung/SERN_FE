@@ -70,6 +70,28 @@
             "no-shedule": "Chưa có lịch trống vui lòng chọn thời gian khác !",
             "choose": "Chọn ",
             "book-free": " và đặt (Phí đặt lịch 0đ)"
+        },
+        "extral-infor-doctor": {
+            "text-price": " GIÁ Khám ",
+            "text-show": "Xem chi tiết ",
+            "text-hidden": "Ẩn bảng giá ",
+            "payment": "Phòng khám có thanh toán bằng hình thức "
+        },
+        "profile-schedule": {
+            "make-schedule": "Đặt lịch khám",
+            "price": "Giá khám: "
+        },
+        "booKing-modal": {
+            "title": "Thông tin đặt lịcch khám bệnh",
+            "fullName": "Họ và tên",
+            "phoneNumber": "Số điện thoại",
+            "email": "Email",
+            "address": "Địa chỉ",
+            "reason": "Lý do khám",
+            "birthday": "Ngày sinh",
+            "gender": "Giới tính",
+            "save": "Xác nhận",
+            "cancel": "Thoát"
         }
     },
     "admin": {
