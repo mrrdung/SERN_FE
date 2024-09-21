@@ -10,6 +10,7 @@ import Home from "../routes/Home";
 import HomePage from "./HomePage/HomePage";
 import Login from "./Auth/Login";
 import DetailDoctor from "./Patient/Doctor/DetailDoctor";
+import VerifyEmail from "./Patient/verifyEmail";
 import System from "../routes/System";
 import CustomScrollbars from "../components/CustomScrollbars";
 import { CustomToastCloseButton } from "../components/CustomToast";
@@ -69,6 +70,10 @@ class App extends Component {
                                     <Route
                                         path={path.DETAIL_DOCTOR}
                                         component={DetailDoctor}
+                                    />
+                                    <Route
+                                        path={path.VERIFY_EMAIL_BOOKING}
+                                        component={VerifyEmail}
                                     />
                                 </Switch>
                             </CustomScrollbars>

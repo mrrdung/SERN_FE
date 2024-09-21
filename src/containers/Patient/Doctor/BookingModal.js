@@ -11,6 +11,7 @@ import { toast } from "react-toastify";
 import { LANGUAGES } from "../../../utils";
 import DatePicker from "../../../components/Input/DatePicker";
 import { FormattedMessage } from "react-intl";
+import moment from "moment";
 class BookingModal extends Component {
     constructor(props) {
         super(props);
@@ -84,22 +85,50 @@ class BookingModal extends Component {
     handleChangeSelect = selectedOption => {
         this.setState({ selectedGender: selectedOption });
     };
+    renderTimeString = dataTime => {
+        let { language } = this.props;
+        if (dataTime && !_.isEmpty(dataTime)) {
+            let time = language === LANGUAGES.VI ? dataTime.timeTypeData.valueVi : dataTime.timeTypeData.valueEn;
+            let date =
+                language === LANGUAGES.VI
+                    ? moment.unix(+dataTime.date / 1000).format("dddd - DD/MM/YYYY")
+                    : moment
+                          .unix(+dataTime.date / 1000)
+                          .locale("en")
+                          .format("ddd - MM/DD/YYYY");
+            return `${time}-${date}`;
+        }
+        return "";
+    };
+    builtDoctorName = dataTime => {
+        let { language } = this.props;
+        if (dataTime.doctorData && !_.isEmpty(dataTime.doctorData)) {
+            let name = `${dataTime.doctorData.firstName} ${dataTime.doctorData.lastName}`;
+            return name;
+        }
+        return "";
+    };
     handlConfirmBooking = async () => {
-        let date = this.state.date;
+        let doctorName = this.builtDoctorName(this.props.dataTime);
+        let timeString = this.renderTimeString(this.props.dataTime);
         let birthday = new Date(this.state.birthday).getTime();
-
+        let date = this.props.dataTime.date;
+        console.log("this.props.dataTime", this.props.dataTime);
         let res = await postBookAppoitment({
             fullName: this.state.fullName,
             phoneNumber: this.state.phoneNumber,
             email: this.state.email,
-            date: date,
+            timeString: timeString,
             address: this.state.address,
             reason: this.state.reason,
             birthday: birthday,
+            date: date,
 
             doctorId: this.state.doctorId,
             gender: this.state.selectedGender.value,
             timeType: this.state.timeType,
+            language: this.props.language,
+            doctorName: doctorName,
         });
         if (res && res.errCode === 0) {
             toast.success("Tạo lịch hẹn thành công!");
