@@ -1,0 +1,42 @@
+.detail-specialty-container {
+    .desciption-specialty {
+        padding: 10px 150px;
+
+        margin-bottom: 20px;
+    }
+    .content-specialty {
+        padding: 20px 150px;
+        background-color: #eeeeee;
+        .search-doctor-province {
+            width: 80px;
+            select {
+                padding: 5px;
+                width: 100%;
+                border: none;
+                option {
+                    border: none !important;
+                }
+            }
+        }
+        .each-doctor {
+            box-shadow: 0px 0px 3px 2px #dacfcf;
+
+            margin-top: 20px;
+            background-color: #ffffff;
+            display: flex;
+            min-height: 300px;
+            // width: 100%
+            .dt-content-left {
+                height: 100px;
+                width: 50%;
+            }
+            .dt-content-right {
+                padding: 20px;
+                width: 45%;
+                .empty-calendar {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

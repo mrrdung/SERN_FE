@@ -56,7 +56,9 @@
         "edit": "Sửa"
     },
     "home-page": {
-        "outstanding-doctor": "Bác sĩ nổi bật"
+        "outstanding-doctor": "Bác sĩ nổi bật",
+        "speciality-popular": "Chuyên khoa phổ biến",
+        "more-info": "Xem thêm"
     },
     "manage-schedule": {
         "title": "Quản lý lịch hẹn khám bệnh của bác sĩ",
@@ -106,7 +108,8 @@
             "seclect-province": "Chọn tỉnh thành",
             "clinic-name": "Tên phòng khám",
             "clinic-address": "Địa chỉ phòng khám",
-            "note": "Ghi chú"
+            "note": "Ghi chú",
+            "specialty": "Chọn chuyên khoa"
         }
     }
 }

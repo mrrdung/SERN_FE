@@ -1,0 +1,22 @@
+.section-specialty {
+    .section-container {
+        .section-body {
+            .section-customize {
+                width: 70% !important ;
+                .bg-image {
+                    width: 100%;
+                }
+                .specialty-name {
+                    text-align: center;
+                    padding: 5px;
+                    font-size: 16px;
+                    margin-top: 12px;
+                    font-weight: 550;
+                    &:hover {
+                        color: #4abce2;
+                    }
+                }
+            }
+        }
+    }
+}
