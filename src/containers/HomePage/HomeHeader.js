@@ -2,7 +2,11 @@ import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import "./Homeheader.scss";
-import logo from "../../assets/logo.svg";
+import logo from "../../assets/logo4.png";
+import homeimg1 from "../../assets/homeimg1.jpg";
+import homeimg2 from "../../assets/homeimg2.jpg";
+import homeimg3 from "../../assets/homeimg3.jpg";
+import homeimg4 from "../../assets/homeimg4.jpg";
 import { FormattedMessage } from "react-intl";
 import { LANGUAGES } from "../../utils/constant";
 import { changeLanguageApp } from "../../store/actions";
@@ -25,7 +29,6 @@ class HomeHeader extends Component {
                 <div className="home-header-container">
                     <div className="home-header-content">
                         <div className="left-content">
-                            <i className="fas fa-bars"></i>
                             <div className="headerlogo">
                                 <img
                                     src={logo}
@@ -92,78 +95,102 @@ class HomeHeader extends Component {
                     </div>
                 </div>
                 {this.props.isShowBanner === true && (
-                    <div className="home-header-banner">
-                        <div className="upbanner">
-                            <div className="title1">
-                                {" "}
-                                <FormattedMessage id="banner.title1" />
-                            </div>
-                            <div className="title2">
-                                {" "}
-                                <FormattedMessage id="banner.title2" />
-                            </div>
-                            <div className="search">
-                                <i className="fas fa-search"></i>
-                                <input
-                                    type="text"
-                                    className="search-input"
-                                    placeholder="OK"
-                                />
-                            </div>
-                        </div>
-                        <div className="downbanner">
-                            <div className="option">
-                                <div className="option-child">
-                                    <div className="icon-child">
-                                        <i className="fas fa-hospital"></i>
-                                    </div>
-                                    <div className="text-child">
-                                        <FormattedMessage id="banner.chidl1" />
-                                    </div>
+                    <>
+                        <div className="home-header-banner">
+                            <div className="upbanner">
+                                <div className="title1">
+                                    <FormattedMessage id="banner.title1" />
                                 </div>
-                                <div className="option-child">
-                                    <div className="icon-child">
-                                        <i className="fas fa-mobile-alt"></i>
-                                    </div>
-                                    <div className="text-child">
-                                        <FormattedMessage id="banner.chidl2" />
-                                    </div>
+                                <div className="title2">
+                                    <FormattedMessage id="banner.title2" />
                                 </div>
-                                <div className="option-child">
-                                    <div className="icon-child">
-                                        <i className="fas fa-user-md"></i>
-                                    </div>
-                                    <div className="text-child">
-                                        <FormattedMessage id="banner.chidl3" />
-                                    </div>
-                                </div>
-                                <div className="option-child">
-                                    <div className="icon-child">
-                                        <i className="fas fa-stethoscope"></i>
-                                    </div>
-                                    <div className="text-child">
-                                        <FormattedMessage id="banner.chidl4" />
-                                    </div>
-                                </div>
-                                <div className="option-child">
-                                    <div className="icon-child">
-                                        <i className="far fa-circle"></i>
-                                    </div>
-                                    <div className="text-child">
-                                        <FormattedMessage id="banner.chidl5" />
-                                    </div>
-                                </div>
-                                <div className="option-child">
-                                    <div className="icon-child">
-                                        <i className="fas fa-venus-double"></i>
-                                    </div>
-                                    <div className="text-child">
-                                        <FormattedMessage id="banner.chidl6" />
-                                    </div>
+                                <div className="search">
+                                    <i className="fas fa-search"></i>
+                                    <input
+                                        type="text"
+                                        className="search-input"
+                                        placeholder="..."
+                                    />
                                 </div>
                             </div>
                         </div>
-                    </div>
+                        <div className="home-body-banner">
+                            <div className="banner-body-text">
+                                <div className="text-title-bn">
+                                    <FormattedMessage id="banner.text-title" />
+                                </div>
+                                <p>
+                                    <FormattedMessage id="banner.text-title2" />
+                                </p>
+                            </div>
+                            <div className="banner-body-content">
+                                <div className="banner-child">
+                                    <div className="imghome">
+                                        <img src={homeimg1} />
+                                    </div>
+                                    <div className="child-content">
+                                        <h4>
+                                            <FormattedMessage id="banner.chidl2" />
+                                        </h4>
+                                        <p>
+                                            <FormattedMessage id="banner.pchidl2" />
+                                        </p>
+                                        <button className="btn-home-header">
+                                            <FormattedMessage id="banner.btnchidl2" />
+                                        </button>
+                                    </div>
+                                </div>
+                                <div className="banner-child">
+                                    <div className="imghome">
+                                        <img src={homeimg2} />
+                                    </div>
+                                    <div className="child-content">
+                                        <h4>
+                                            <FormattedMessage id="banner.chidl3" />
+                                        </h4>
+                                        <p>
+                                            <FormattedMessage id="banner.pchidl3" />
+                                        </p>
+                                        <button className="btn-home-header">
+                                            <FormattedMessage id="banner.btnchidl3" />
+                                        </button>
+                                    </div>
+                                </div>
+                                <div className="banner-child">
+                                    <div className="imghome">
+                                        <img src={homeimg3} />
+                                    </div>
+                                    <div className="child-content">
+                                        <h4>
+                                            <FormattedMessage id="banner.chidl4" />
+                                        </h4>
+                                        <p>
+                                            <FormattedMessage id="banner.pchidl4" />
+                                        </p>
+                                        <button className="btn-home-header">
+                                            <FormattedMessage id="banner.btnchidl4" />
+                                        </button>
+                                    </div>
+                                </div>
+                                <div className="banner-child">
+                                    <div className="imghome">
+                                        <img src={homeimg4} />
+                                    </div>
+                                    <div className="child-content">
+                                        <h4>
+                                            <FormattedMessage id="banner.chidl5" />
+                                        </h4>
+                                        <p>
+                                            <FormattedMessage id="banner.pchidl5" />
+                                        </p>
+                                        <button className="btn-home-header">
+                                            <FormattedMessage id="banner.btnchidl5" />
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </>
                 )}
             </React.Fragment>
         );

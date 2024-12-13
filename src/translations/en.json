@@ -12,23 +12,32 @@
         "welcome": "Welcome "
     },
     "banner": {
-        "title1": "MEDICAL PLATFORM",
-        "title2": "COMPREHENSIVE HEALTH CARE",
+        "title1": "MEDICAL PLATFORM, COMPREHENSIVE HEALTH CARE",
+        "title2": "Find the best doctor and clinic to take care of your health.",
         "search": "Search",
         "chidl1": "Specialist examination",
-        "chidl2": "Remote examination",
-        "chidl3": "General examination",
-        "chidl4": " Medical Test",
-        "chidl5": " Mental health",
-        "chidl6": "Dental checkup"
+        "text-title": "Comprehensive and reputable health care network",
+        "text-title2": "Find the best doctors in multiple specialties or hospitals in your city",
+        "chidl2": "Find a clinic",
+        "btnchidl2": "Find a clinic",
+        "pchidl2": "Fast, easy and safe",
+        "chidl3": "Make an appointment",
+        "btnchidl3": "Find a doctor now",
+        "pchidl3": "For admission and clinical examination.",
+        "chidl4": "Buy medicine",
+        "btnchidl4": "Buy Now",
+        "pchidl4": "We cater to all your health needs!",
+        "chidl5": "SURGICAL SUPPORT",
+        "btnchidl5": "Check it out now",
+        "pchidl5": "For the best and affordable surgical treatment."
     },
     "menu": {
         "admin": {
             "manage-user": "Manage user",
             "manage-doctor": "Manage doctors",
             "manage-admin": "Manage admins",
-            "crud": "CRUD User",
-            "crud-redux": "CRUD Redux",
+            "crud": "List Users",
+            "crud-redux": "Manage Users",
             "clinic": "Clinic",
             "manage-clinic": "Manage clinics",
             "specialty": "Specialty",
@@ -37,7 +46,8 @@
             "manage-handbook": "Manage handbooks"
         },
         "doctor": {
-            "manage-schedule": "Manage Doctor's schedule"
+            "manage-schedule": "Manage Doctor's schedule",
+            "manage-patient": "Manage Doctor's patient"
         }
     },
     "manage-user": {
@@ -57,6 +67,7 @@
     "home-page": {
         "outstanding-doctor": "Outstanding doctor",
         "speciality-popular": "Popular specialties",
+        "Outstan-m-f": "Outstanding medical facilities",
         "more-info": "See more"
     },
     "manage-schedule": {
@@ -107,7 +118,9 @@
             "seclect-province": "Seclect province",
             "clinic-name": "Clinic name",
             "clinic-address": "Clinic address",
-            "note": "Note"
+            "note": "Note",
+            "select-clinic": " Select medical facility",
+            "medical-facility": " Medical facility"
         }
     }
 }

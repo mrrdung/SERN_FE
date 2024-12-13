@@ -1,0 +1,25 @@
+.manage-specialty-container {
+    padding: 40px 20px 20px 20px;
+
+    .add-new-specialty {
+        padding-top: 30px;
+        .mdEditer-specialty {
+            padding-top: 40px;
+        }
+        .btn-save-specialty {
+            padding-top: 20px;
+            margin-left: 10px;
+            button {
+                border: none;
+                border-radius: 158px;
+                padding: 5px;
+                width: 80px;
+                color: whitesmoke;
+                background-color: #14a79f;
+                &:hover {
+                    background-color: #e3b50d;
+                }
+            }
+        }
+    }
+}

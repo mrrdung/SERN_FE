@@ -49,12 +49,19 @@ class DoctorSchedule extends Component {
 
         return allDays;
     };
-    componentDidMount() {
+    async componentDidMount() {
         let { language } = this.props;
         // console.log(moment(new Date()).format("dddd-DD/MM"));
         // console.log(moment(new Date()).locale("en").format("ddd-DD/MM"));
         let allDays = this.getArrDays(language);
-
+        if (this.props.doctorIdFromParent) {
+            let res = await getScheduleDoctorByDate(this.props.doctorIdFromParent, allDays[0].value);
+            if (res && res.errCode === 0) {
+                this.setState({
+                    allAvalableTime: res.data ? res.data : [],
+                });
+            }
+        }
         this.setState({
             allDays: allDays,
         });

@@ -130,8 +130,17 @@ class BookingModal extends Component {
         });
         if (res && res.errCode === 0) {
             toast.success("Tạo lịch hẹn thành công!");
+            this.setState({
+                fullName: "",
+                phoneNumber: "",
+                email: "",
+                address: "",
+                reason: "",
+                birthday: "",
+                gender: "",
+            });
         } else {
-            toast.success("Tạo lịch hẹn thất bại!");
+            toast.error("Tạo lịch hẹn thất bại!");
         }
     };
     handleOnchangeBirthday = date => {
@@ -148,8 +157,6 @@ class BookingModal extends Component {
         }
         return (
             <>
-                {/* fullName: "", phoneNumber: "", email: "", address: "", reason: "", birthday: "", gender: "", doctorId:
-                "", */}
                 <Modal
                     isOpen={isOpenModal}
                     // toggle={() => this.toggle()}
@@ -168,6 +175,8 @@ class BookingModal extends Component {
                                     doctorId={doctorId}
                                     isShowDesciptionProfile={false}
                                     dataTime={dataTime}
+                                    isShowlinkDetail={false}
+                                    isShowPrice={true}
                                 />
                             </div>
                             <div className="price"></div>

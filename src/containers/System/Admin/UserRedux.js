@@ -7,6 +7,7 @@ import "./UserRedux.scss";
 import Lightbox from "react-image-lightbox";
 import "react-image-lightbox/style.css";
 import TableManageUser from "./TableManageUser";
+import { toast } from "react-toastify";
 
 class UserRedux extends Component {
     constructor(props) {
@@ -115,7 +116,7 @@ class UserRedux extends Component {
         for (let i = 0; i < arrCheck.length; i++) {
             if (!this.state[arrCheck[i]]) {
                 isValid = false;
-                alert("missing require input paramer" + arrCheck[i]);
+                toast.error("Missing require input paramer " + arrCheck[i]);
                 break;
             }
         }

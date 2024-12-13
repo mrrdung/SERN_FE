@@ -1,58 +1,69 @@
-import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { FormattedMessage } from 'react-intl';
+import React, { Component } from "react";
+import { Redirect } from "react-router-dom";
+import { connect } from "react-redux";
+import { FormattedMessage } from "react-intl";
 import Slider from "react-slick";
-
-
-
+import { getAllClinic } from "../../../services/userService";
+import { withRouter } from "react-router";
 class MedicalFactory extends Component {
-
-
+    constructor(props) {
+        super(props);
+        this.state = {
+            dataClinic: [],
+        };
+    }
+    async componentDidMount() {
+        let res = await getAllClinic();
+        if (res && res.errCode === 0) {
+            this.setState({
+                dataClinic: res.data ? res.data : [],
+            });
+        }
+        console.log("check res", res);
+    }
+    handleViewDetailClinic = clinic => {
+        if (this.props.history) {
+            this.props.history.push(`/detail-clinic/${clinic.id}`);
+        }
+    };
     render() {
-
-
+        let { dataClinic } = this.state;
         return (
-            <div className='section-share  section-medical'>
-                <div className='section-container'>
-                    <div className='section-header'>
-                        <span className='tex-section-header'>Cơ sở y tế nổi bật</span>
-                        <button className='btn-header-spe'>Xem thêm</button>
+            <div className="section-share  section-medical">
+                <div className="section-container">
+                    <div className="section-header">
+                        <span className="tex-section-header">
+                            <FormattedMessage id="home-page.Outstan-m-f" />
+                        </span>
+                        <button className="btn-header-spe">
+                            <FormattedMessage id="home-page.more-info" />
+                        </button>
                     </div>
-                    <div className='section-body'>
+                    <div className="section-body">
                         <Slider {...this.props.settings}>
-
-                            <div className='section-customize'>
-                                <div className='bg-image section-medical'></div>
-                                <div >Co xuong khop 1</div>
-                            </div>
-                            <div className='section-customize'>
-                                <div className='bg-image section-medical'></div>
-                                <div >Co xuong khop 1</div>
-                            </div>
-                            <div className='section-customize'>
-                                <div className='bg-image section-medical'></div>
-                                <div >Co xuong khop 1</div>
-                            </div>
-                            <div className='section-customize'>
-                                <div className='bg-image section-medical'></div>
-                                <div >Co xuong khop 1</div>
-                            </div>
-                            <div className='section-customize'>
-                                <div className='bg-image section-medical'></div>
-                                <div >Co xuong khop 1</div>
-                            </div>
-                            <div className='section-customize'>
-                                <div className='bg-image section-medical'></div>
-                                <div >Co xuong khop 1</div>
-                            </div>
+                            {dataClinic &&
+                                dataClinic.length > 0 &&
+                                dataClinic.map((item, index) => {
+                                    return (
+                                        <div
+                                            className="section-customize"
+                                            key={index}
+                                            onClick={() => this.handleViewDetailClinic(item)}
+                                        >
+                                            <div
+                                                className="bg-image section-medical"
+                                                style={{ backgroundImage: `url(${item.image})` }}
+                                            ></div>
+                                            <div>{item.name}</div>
+                                        </div>
+                                    );
+                                })}
                         </Slider>
                     </div>
                 </div>
             </div>
         );
     }
-
 }
 
 const mapStateToProps = state => {
@@ -63,9 +74,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => {
-    return {
-
-    };
+    return {};
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(MedicalFactory);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(MedicalFactory));

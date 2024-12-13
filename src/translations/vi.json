@@ -12,23 +12,32 @@
         "welcome": "Xin chào "
     },
     "banner": {
-        "title1": "NỀN TẢNG Y TẾ",
-        "title2": "CHĂM SÓC SỨC KHỎE TOÀN DIỆN",
+        "title1": "NỀN TẢNG Y TẾ, CHĂM SÓC SỨC KHỎE TOÀN DIỆN",
+        "title2": "Tìm bác sĩ, phòng khám tốt nhất để chăm sóc sức khỏe cho bạn.",
         "chidl1": "Khám chuyên khoa",
         "search": "Tìm kIếm",
-        "chidl2": "Khám từ xa",
-        "chidl3": "Khám tổng quát",
-        "chidl4": " Xét nghiệm y học",
-        "chidl5": " Sức khỏe tinh thần",
-        "chidl6": "Khám nha khoa"
+        "text-title": "Mạng lưới chăm sóc sức khỏe toàn diện uy tín",
+        "text-title2": "Tìm bác sĩ giỏi nhất ở nhiều chuyên khoa hoặc bệnh viện trong thành phố của bạn",
+        "chidl2": "Tìm phòng khám",
+        "btnchidl2": "Tìm phòng khám",
+        "pchidl2": "Nhanh chóng, dễ dàng và an toàn",
+        "chidl3": "Đặt lịch hẹn",
+        "btnchidl3": "Tìm bác sĩ ngay",
+        "pchidl3": "Dành cho việc nhập viện và khám lâm sàng.",
+        "chidl4": "Mua thuốc",
+        "btnchidl4": "Mua ngay",
+        "pchidl4": "Chúng tôi đáp ứng mọi nhu cầu về sức khỏe của bạn!",
+        "chidl5": "HỖ TRỢ PHẪU THUẬT",
+        "btnchidl5": "Tham khảo ngay",
+        "pchidl5": "Để có phương pháp điều trị phẫu thuật tốt nhất và giá cả phải chăng."
     },
     "menu": {
         "admin": {
             "manage-user": "Quản lý người dùng",
             "manage-doctor": "Quản lý bác sĩ",
             "manage-admin": "Quản lý admin",
-            "crud": "CRUD User",
-            "crud-redux": "CRUD Redux",
+            "crud": "Danh sách người dùng",
+            "crud-redux": "Quản lý người dùng",
             "clinic": "Phòng khám",
             "manage-clinic": "Quản lý phòng khám",
             "specialty": "Chuyên khoa",
@@ -37,7 +46,8 @@
             "manage-handbook": "Quản lý cẩm nang"
         },
         "doctor": {
-            "manage-schedule": "Quản lý kế hoạch khám bệnh bác sỹ"
+            "manage-schedule": "Quản lý kế hoạch khám bệnh bác sỹ",
+            "manage-patient": "Quản lý bệnh nhân khám bệnh"
         }
     },
     "manage-user": {
@@ -58,6 +68,8 @@
     "home-page": {
         "outstanding-doctor": "Bác sĩ nổi bật",
         "speciality-popular": "Chuyên khoa phổ biến",
+        "Outstan-m-f": "Cơ sở y tế nổi bật",
+        "handbook": "Cẩm nang",
         "more-info": "Xem thêm"
     },
     "manage-schedule": {
@@ -108,6 +120,8 @@
             "seclect-province": "Chọn tỉnh thành",
             "clinic-name": "Tên phòng khám",
             "clinic-address": "Địa chỉ phòng khám",
+            "select-clinic": " Chọn cơ sở y tế",
+            "medical-facility": " Cơ sở y tế",
             "note": "Ghi chú",
             "specialty": "Chọn chuyên khoa"
         }

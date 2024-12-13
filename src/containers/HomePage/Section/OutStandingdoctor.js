@@ -41,7 +41,9 @@ class OutStandingdoctor extends Component {
                         <span className="tex-section-header">
                             <FormattedMessage id="home-page.outstanding-doctor" />
                         </span>
-                        <button className="btn-header-spe">Xem thêm</button>
+                        <button className="btn-header-spe">
+                            <FormattedMessage id="home-page.more-info" />
+                        </button>
                     </div>
                     <div className="section-body">
                         <Slider {...this.props.settings}>

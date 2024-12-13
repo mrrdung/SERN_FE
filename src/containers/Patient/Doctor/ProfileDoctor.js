@@ -7,6 +7,7 @@ import _ from "lodash";
 import moment from "moment";
 import { FormattedMessage } from "react-intl";
 import NumberFormat from "react-number-format";
+import { Link } from "react-router-dom";
 class ProfileDoctor extends Component {
     constructor(props) {
         super(props);
@@ -61,7 +62,7 @@ class ProfileDoctor extends Component {
 
     render() {
         let { dataProfile } = this.state;
-        let { language, isShowDesciptionProfile, dataTime } = this.props;
+        let { language, isShowDesciptionProfile, dataTime, isShowPrice, isShowlinkDetail, doctorId } = this.props;
 
         let nameVi = "";
         let nameEn = "";
@@ -78,6 +79,7 @@ class ProfileDoctor extends Component {
                             className="left-Content"
                             style={{ backgroundImage: `url(${dataProfile.image})` }}
                         ></div>
+
                         {isShowDesciptionProfile === true && (
                             <div className="right-Content">
                                 <div className="up">{language === LANGUAGES.VI ? nameVi : nameEn}</div>
@@ -112,38 +114,45 @@ class ProfileDoctor extends Component {
                             </div>
                         )}
                     </div>
-                    <div className="price">
-                        <label className="price-option">
-                            <FormattedMessage id="patient.profile-schedule.price" />
-                            {
-                                dataProfile &&
+                    {isShowlinkDetail === true && (
+                        <div className="more-info-po">
+                            <Link to={`/detail-doctor/${doctorId}`}>Xem thêm</Link>
+                        </div>
+                    )}
+                    {isShowPrice === true && (
+                        <div className="price">
+                            <label className="price-option">
+                                <FormattedMessage id="patient.profile-schedule.price" />
+                                {
+                                    dataProfile &&
+                                        dataProfile.Doctor_Infor &&
+                                        dataProfile.Doctor_Infor.priceData &&
+                                        language === LANGUAGES.VI && (
+                                            <NumberFormat
+                                                value={dataProfile.Doctor_Infor.priceData.valueVi}
+                                                displayType={"text"}
+                                                thousandSeparator={true}
+                                                suffix={"VND"}
+                                            />
+                                        )
+                                    // ? dataProfile.Doctor_Infor.priceData.valueVi
+                                    // : ""
+                                }
+
+                                {dataProfile &&
                                     dataProfile.Doctor_Infor &&
                                     dataProfile.Doctor_Infor.priceData &&
-                                    language === LANGUAGES.VI && (
+                                    language === LANGUAGES.EN && (
                                         <NumberFormat
-                                            value={dataProfile.Doctor_Infor.priceData.valueVi}
+                                            value={dataProfile.Doctor_Infor.priceData.valueEn}
                                             displayType={"text"}
                                             thousandSeparator={true}
-                                            suffix={"VND"}
+                                            suffix={"$"}
                                         />
-                                    )
-                                // ? dataProfile.Doctor_Infor.priceData.valueVi
-                                // : ""
-                            }
-
-                            {dataProfile &&
-                                dataProfile.Doctor_Infor &&
-                                dataProfile.Doctor_Infor.priceData &&
-                                language === LANGUAGES.EN && (
-                                    <NumberFormat
-                                        value={dataProfile.Doctor_Infor.priceData.valueEn}
-                                        displayType={"text"}
-                                        thousandSeparator={true}
-                                        suffix={"$"}
-                                    />
-                                )}
-                        </label>
-                    </div>
+                                    )}
+                            </label>
+                        </div>
+                    )}
                 </div>
             </>
         );
