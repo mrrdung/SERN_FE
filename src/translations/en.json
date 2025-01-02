@@ -1,6 +1,6 @@
 {
     "homeheader": {
-        "speciality": "speciality",
+        "speciality": "Speciality",
         "searcdoctor": "Find a doctor by specialty",
         "health-facility": "Medical facility",
         "select-room": "Select hospital clinic",
@@ -47,7 +47,8 @@
         },
         "doctor": {
             "manage-schedule": "Manage Doctor's schedule",
-            "manage-patient": "Manage Doctor's patient"
+            "manage-patient": "Manage Doctor's patient",
+            "manage-doctor": "Manage doctors"
         }
     },
     "manage-user": {
@@ -62,13 +63,17 @@
         "gender": "Gender",
         "position": "Position",
         "role": "Role",
-        "save": "Save"
+        "save": "Save",
+        "action": "Action",
+        "fullname": "FullName"
     },
     "home-page": {
         "outstanding-doctor": "Outstanding doctor",
         "speciality-popular": "Popular specialties",
         "Outstan-m-f": "Outstanding medical facilities",
-        "more-info": "See more"
+        "more-info": "See more",
+        "handbook": "Handbook",
+        "quickbooks": "What the Media Says About QuickoBook"
     },
     "manage-schedule": {
         "title": "Manage your doctor appointment schedule",
@@ -120,7 +125,8 @@
             "clinic-address": "Clinic address",
             "note": "Note",
             "select-clinic": " Select medical facility",
-            "medical-facility": " Medical facility"
+            "medical-facility": " Medical facility",
+            "specialty-name": "Specialty name"
         }
     }
 }

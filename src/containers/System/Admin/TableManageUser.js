@@ -50,12 +50,24 @@ class TableManageUser extends Component {
                     <div className="users-table mt-3 mx-1">
                         <table id="TableManageUser">
                             <tr>
-                                <th>Email</th>
-                                <th>FirstName</th>
-                                <th>LastName</th>
-                                <th>Address</th>
-                                <th>Phonenumber</th>
-                                <th>Action</th>
+                                <th>
+                                    <FormattedMessage id="manage-user.email" />
+                                </th>
+                                <th>
+                                    <FormattedMessage id="manage-user.first-name" />
+                                </th>
+                                <th>
+                                    <FormattedMessage id="manage-user.last-name" />
+                                </th>
+                                <th>
+                                    <FormattedMessage id="manage-user.address" />
+                                </th>
+                                <th>
+                                    <FormattedMessage id="manage-user.phonenumber" />
+                                </th>
+                                <th>
+                                    <FormattedMessage id="manage-user.action" />
+                                </th>
                             </tr>
                             {arrUser &&
                                 arrUser.length > 0 &&

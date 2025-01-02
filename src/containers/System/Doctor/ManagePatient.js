@@ -5,6 +5,8 @@ import DatePicker from "../../../components/Input/DatePicker";
 import { getAllPatientDordoctor, postSendRemedy } from "../../../services/userService";
 import moment from "moment";
 import RemedyModal from "./RemedyModal";
+import HistoryModal from "./HistoryModal";
+import { getDetailHistory } from "../../../services/userService";
 import { toast } from "react-toastify";
 class ManagePatient extends Component {
     constructor(props) {
@@ -13,6 +15,7 @@ class ManagePatient extends Component {
             currentDate: moment(new Date()).startOf("day").valueOf(),
             dataPatient: [],
             isOpenRemedyModal: false,
+            isOpenHistoryModal: false,
             dataModal: {},
         };
     }
@@ -48,6 +51,8 @@ class ManagePatient extends Component {
     };
 
     handleBtnConfirm = item => {
+        console.log("item", item);
+
         let data = {
             doctorId: item.doctorId,
             patientId: item.patientId,
@@ -59,14 +64,27 @@ class ManagePatient extends Component {
             dataModal: data,
         });
     };
+    handleBtnViewHistory = async item => {
+        let id = item.patientId;
+        let info = await getDetailHistory(id);
+
+        let note = info.data;
+        console.log("arr", note);
+        this.setState({
+            isOpenHistoryModal: true,
+            dataModal: note,
+        });
+    };
     sendRemedy = async dataChild => {
-        let { dataModal } = this.state;
+        let { dataModal, currentDate } = this.state;
         let res = await postSendRemedy({
             email: dataChild.email,
             imgBase64: dataChild.imgBase64,
             doctorId: dataModal.doctorId,
             patientId: dataModal.patientId,
             timeType: dataModal.timeType,
+            notePar: dataChild.note,
+            date: currentDate,
         });
         if (res && res.errCode === 0) {
             toast.success("Send Redemedy success");
@@ -83,8 +101,14 @@ class ManagePatient extends Component {
             dataModal: {},
         });
     };
+    handlToggleHis = () => {
+        this.setState({
+            isOpenHistoryModal: false,
+            dataModal: {},
+        });
+    };
     render() {
-        let { dataPatient, isOpenRemedyModal, dataModal } = this.state;
+        let { dataPatient, isOpenRemedyModal, dataModal, isOpenHistoryModal } = this.state;
 
         return (
             <>
@@ -107,6 +131,7 @@ class ManagePatient extends Component {
                                         <th>Họ và tên</th>
                                         <th>Thời gian</th>
                                         <th>Giới tính</th>
+                                        <th>Lịch sử </th>
                                         <th>Action</th>
                                     </tr>
                                     {dataPatient && dataPatient.length > 0 ? (
@@ -117,6 +142,14 @@ class ManagePatient extends Component {
                                                     <td>{item.patientData.firstName}</td>
                                                     <td>{item.timeTypeDataPatient.valueVi}</td>
                                                     <td>{item.patientData.genderData.valueVi}</td>
+                                                    <td className="btn-action">
+                                                        <button
+                                                            onClick={() => this.handleBtnViewHistory(item)}
+                                                            className="btn-confirm"
+                                                        >
+                                                            Xem
+                                                        </button>
+                                                    </td>
                                                     <td className="btn-action">
                                                         <button
                                                             onClick={() => this.handleBtnConfirm(item)}
@@ -143,6 +176,11 @@ class ManagePatient extends Component {
                         </div>
                     </div>
                 </div>
+                <HistoryModal
+                    isOpenModal={isOpenHistoryModal}
+                    closeModalPatient={this.handlToggleHis}
+                    dataModal={dataModal}
+                />
                 <RemedyModal
                     isOpenModal={isOpenRemedyModal}
                     closeModalPatient={this.handlToggle}

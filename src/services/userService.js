@@ -38,6 +38,9 @@ const saveInfoDoctor = data => {
 const getDetailInforDoctor = inputId => {
     return axios.get(`/api/get-detail-doctor-by-id?id=${inputId}`);
 };
+const getDetailHistory = inputId => {
+    return axios.get(`/api/get-history-patient-by-id?id=${inputId}`);
+};
 
 const saveBulkScheduleDoctor = data => {
     return axios.post("/api/bulk-create-schedule", data);
@@ -109,4 +112,5 @@ export {
     getDetailClinicById,
     getAllPatientDordoctor,
     postSendRemedy,
+    getDetailHistory,
 };

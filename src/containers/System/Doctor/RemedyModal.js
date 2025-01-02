@@ -13,6 +13,7 @@ class RemedyModal extends Component {
         this.state = {
             email: "",
             imgBase64: "",
+            note: "",
         };
     }
 
@@ -36,6 +37,11 @@ class RemedyModal extends Component {
             email: event.target.email,
         });
     };
+    handleChangeNote = event => {
+        this.setState({
+            note: event.target.value,
+        });
+    };
     handleChangeImage = async event => {
         let data = event.target.files;
         let file = data[0];
@@ -55,6 +61,7 @@ class RemedyModal extends Component {
     };
     render() {
         let { isOpenModal, dataModal, closeModalPatient, sendRemedy } = this.props;
+        console.log("state data:", this.state);
 
         return (
             <>
@@ -70,7 +77,7 @@ class RemedyModal extends Component {
                     </ModalHeader>
                     <ModalBody>
                         <div className="row">
-                            <div className="col-6 form-group">
+                            <div className="col-4 form-group">
                                 <label>Email</label>
                                 <input
                                     className="form-control"
@@ -78,12 +85,20 @@ class RemedyModal extends Component {
                                     value={this.state.email}
                                 ></input>
                             </div>
-                            <div className="col-6 form-group">
+                            <div className="col-3 form-group">
                                 <label>Chọn file đơn thuốc </label>
                                 <input
                                     className="form-control"
                                     type="file"
                                     onChange={event => this.handleChangeImage(event)}
+                                ></input>
+                            </div>
+                            <div className="col-4 form-group">
+                                <label>Ghi chú </label>
+                                <input
+                                    className="form-control"
+                                    value={this.state.note}
+                                    onChange={event => this.handleChangeNote(event)}
                                 ></input>
                             </div>
                         </div>

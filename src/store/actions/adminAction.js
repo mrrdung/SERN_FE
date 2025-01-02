@@ -198,7 +198,7 @@ export const updateUserFail = () => ({
 export const fetchTopDoctorStart = () => {
     return async (dispatch, getState) => {
         try {
-            let res = await getTopDoctorHomeService("4");
+            let res = await getTopDoctorHomeService("7");
             console.log("check responsse", res);
             if (res && res.errCode === 0) {
                 dispatch(fetchTopDoctorSuccess(res.data));

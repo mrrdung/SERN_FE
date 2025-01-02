@@ -21,7 +21,7 @@ class HandBook extends Component {
                         <Slider {...this.props.settings}>
                             <div className="section-customize">
                                 <div className="bg-image section-handlebook"></div>
-                                <div>6 địa chỉ mạnh về Nội Thần kinh tại Hà Nội</div>
+                                <div>Top 6 địa chỉ mạnh về Nội Thần kinh tại Hà Nội</div>
                             </div>
                             <div className="section-customize">
                                 <div className="bg-image section-handlebook"></div>
@@ -29,19 +29,19 @@ class HandBook extends Component {
                             </div>
                             <div className="section-customize">
                                 <div className="bg-image section-handlebook"></div>
-                                <div>Co xuong khop 1</div>
+                                <div>Top 7 Bác sĩ sản phụ khoa giỏi TPHCM (phần 2)</div>
                             </div>
                             <div className="section-customize">
                                 <div className="bg-image section-handlebook"></div>
-                                <div>Co xuong khop 1</div>
+                                <div>Top 4 Bác thần kinh giỏi TPHCM (phần 2)</div>
                             </div>
                             <div className="section-customize">
                                 <div className="bg-image section-handlebook"></div>
-                                <div>Co xuong khop 1</div>
+                                <div>Top 4 bệnh viện, phòng khám giảm cân uy tín tại TP.HCM</div>
                             </div>
                             <div className="section-customize">
                                 <div className="bg-image section-handlebook"></div>
-                                <div>Co xuong khop 1</div>
+                                <div>Mẹo ăn uống heotle</div>
                             </div>
                         </Slider>
                     </div>

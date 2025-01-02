@@ -5,9 +5,10 @@ import { FormattedMessage } from "react-intl";
 import Slider from "react-slick";
 import * as actions from "../../../store/actions";
 import { LANGUAGES } from "../../../utils";
+import HomeHeader from "../HomeHeader";
 import { withRouter } from "react-router-dom";
-
-class OutStandingdoctor extends Component {
+import "./Alldoctor.scss";
+class Alldoctor extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -32,21 +33,20 @@ class OutStandingdoctor extends Component {
 
     render() {
         let arrDoctors = this.state.arrDoctors;
-        arrDoctors = arrDoctors.concat(arrDoctors);
+        arrDoctors = arrDoctors.concat(arrDoctors).concat(arrDoctors);
         let { language } = this.props;
         return (
-            <div className="section-share  section-outstanding-doctor">
-                <div className="section-container">
-                    <div className="section-header">
-                        <span className="tex-section-header">
-                            <FormattedMessage id="home-page.outstanding-doctor" />
-                        </span>
-                        <button className="btn-header-spe">
-                            <FormattedMessage id="home-page.more-info" />
-                        </button>
-                    </div>
-                    <div className="section-body">
-                        <Slider {...this.props.settings}>
+            <>
+                <HomeHeader />
+                //{" "}
+                <div className="section-share  section-outstanding-doctor">
+                    <div className="section-containerALL">
+                        <div className="section-header">
+                            <span className="tex-section-header">
+                                <FormattedMessage id="home-page.outstanding-doctor" />
+                            </span>
+                        </div>
+                        <div className="section-body">
                             {arrDoctors &&
                                 arrDoctors.length > 0 &&
                                 arrDoctors.map((item, index) => {
@@ -76,10 +76,10 @@ class OutStandingdoctor extends Component {
                                         </div>
                                     );
                                 })}
-                        </Slider>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </>
         );
     }
 }
@@ -98,4 +98,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(OutStandingdoctor));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Alldoctor));

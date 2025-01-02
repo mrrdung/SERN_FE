@@ -6,7 +6,7 @@ import { CommonUtils } from "../../../utils/";
 import "./ManageClinic.scss";
 import { postCreateNewClinic } from "../../../services/userService";
 import { toast } from "react-toastify";
-
+import { FormattedMessage } from "react-intl";
 const mdParser = new MarkdownIt(/* Markdown-it options */);
 // Finish!
 
@@ -77,10 +77,16 @@ class ManageSpecialty extends Component {
         return (
             <>
                 <div className="manage-specialty-container">
-                    <div className="title">Quan ly Co so y te</div>
+                    <div className="title">
+                        {" "}
+                        <FormattedMessage id="menu.admin.manage-clinic" />
+                    </div>
                     <div className="add-new-specialty row">
                         <div className="col-6 form-group">
-                            <label>Ten co so yte</label>
+                            <label>
+                                {" "}
+                                <FormattedMessage id="admin.manage-doctor.clinic-name" />
+                            </label>
                             <input
                                 value={this.state.name}
                                 onChange={event => this.handleOnchangeInput(event, "name")}
@@ -88,7 +94,9 @@ class ManageSpecialty extends Component {
                             ></input>
                         </div>
                         <div className="col-6 form-group custom-file">
-                            <label>img</label>
+                            <label>
+                                <FormattedMessage id="manage-user.image" />
+                            </label>
                             <input
                                 type="file"
                                 onChange={event => this.handleOnChangeImage(event)}
@@ -96,7 +104,9 @@ class ManageSpecialty extends Component {
                             ></input>
                         </div>
                         <div className="col-6 form-group">
-                            <label>Dia chi phong kham</label>
+                            <label>
+                                <FormattedMessage id="admin.manage-doctor.clinic-address" />
+                            </label>
                             <input
                                 value={this.state.address}
                                 onChange={event => this.handleOnchangeInput(event, "address")}
@@ -112,7 +122,9 @@ class ManageSpecialty extends Component {
                             />
                         </div>
                         <div className="col-12 btn-save-specialty">
-                            <button onClick={() => this.handleSaveNewSpecialty()}>save</button>
+                            <button onClick={() => this.handleSaveNewSpecialty()}>
+                                <FormattedMessage id="manage-user.save" />
+                            </button>
                         </div>
                     </div>
                 </div>

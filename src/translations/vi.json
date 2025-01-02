@@ -47,7 +47,8 @@
         },
         "doctor": {
             "manage-schedule": "Quản lý kế hoạch khám bệnh bác sỹ",
-            "manage-patient": "Quản lý bệnh nhân khám bệnh"
+            "manage-patient": "Quản lý bệnh nhân khám bệnh",
+            "manage-doctor": "Quản lý bác sĩ"
         }
     },
     "manage-user": {
@@ -63,14 +64,17 @@
         "position": "Chức danh",
         "role": "Vai trò",
         "save": "Lưu",
-        "edit": "Sửa"
+        "edit": "Sửa",
+        "action": "Thao tác",
+        "fullname": "Họ và tên"
     },
     "home-page": {
         "outstanding-doctor": "Bác sĩ nổi bật",
         "speciality-popular": "Chuyên khoa phổ biến",
         "Outstan-m-f": "Cơ sở y tế nổi bật",
         "handbook": "Cẩm nang",
-        "more-info": "Xem thêm"
+        "more-info": "Xem thêm",
+        "quickbooks": "Truyền thông nói về QuickoBook"
     },
     "manage-schedule": {
         "title": "Quản lý lịch hẹn khám bệnh của bác sĩ",
@@ -123,7 +127,8 @@
             "select-clinic": " Chọn cơ sở y tế",
             "medical-facility": " Cơ sở y tế",
             "note": "Ghi chú",
-            "specialty": "Chọn chuyên khoa"
+            "specialty": "Chọn chuyên khoa",
+            "specialty-name": "Tên chuyên khoa"
         }
     }
 }

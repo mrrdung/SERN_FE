@@ -21,6 +21,9 @@ class HomeHeader extends Component {
             this.props.history.push(`/home`);
         }
     };
+    handleButtonClick = () => {
+        this.props.history.push("/alldocter");
+    };
     render() {
         let language = this.props.language;
 
@@ -151,7 +154,10 @@ class HomeHeader extends Component {
                                         <p>
                                             <FormattedMessage id="banner.pchidl3" />
                                         </p>
-                                        <button className="btn-home-header">
+                                        <button
+                                            className="btn-home-header"
+                                            onClick={this.handleButtonClick}
+                                        >
                                             <FormattedMessage id="banner.btnchidl3" />
                                         </button>
                                     </div>
